@@ -1,21 +1,20 @@
 import styled from "styled-components"
 
-
 export const FormContainer = styled.form`
   padding: var(--space-xs);
   margin: var(--space-xs);
-  border-radius: 5px;
+  border-radius: 10px;
   display:flex;
   flex-direction: column;
-  background-color: var(--black);
-  border: solid var(--gray) 2px;
+  background-color: var(--gray);
+  border: solid var(--lightgray) 1px;
 `
 export const FormTitle = styled.h2`
   font-family: var(--font-primary);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-md); 
   color: var(--white);
-  margin-bottom: var(--space-xxs);
+  margin-bottom: var(--space-xs);
 `
 
 export const InputLabel = styled.label`
@@ -31,13 +30,14 @@ export const FormInput = styled.input`
   padding: var(--space-xxs);
   outline: none;
   border: none;
-  font-family: var(--font-secondary);
-  font-size: var(--font-size-xxs);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xs);
   margin-bottom:var(--space-xs); 
   border: solid var(--gray) 1px;
-  color: var(--yellow);
+  border-radius: 10px;
+  color: var(--white);
   &:focus {
-    border: solid var(--yellow) 1px;
+    border: solid var(--lightgray) 1px;
   }
 `
 
@@ -52,20 +52,26 @@ export const FormSubmitButton = styled.button`
   font-family: var(--font-primary);
   align-self: flex-end;
   border: solid var(--gray) 1px;
+  border-radius: 10px;
   &:focus {
-    border: solid var(--yellow) 1px;
-    color: var(--yellow);
+    border: solid var(--red) 1px;
   }
 `
 
 export const FormError = styled.p`
-  margin-bottom: var(--space-xs);
-  padding: var(--space-sm) 0;
-  color: var(--yellow);
+  margin-bottom: var(--space-sm);
+  color: var(--red);
   font-family: var(--font-primary);
   font-weight: var(--font-weight-md);
-  background-color: var(--black);
-  border: solid var(--yellow) 1px;
-  padding: var(--space-sm);
+  background-color: var(--gray);
+  font-size: var(--font-size-xs);
+`
+
+export const FormSuccess = styled.p`
+  margin-bottom: var(--space-sm);
+  color: var(--green);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-md);
+  background-color: var(--gray);
   font-size: var(--font-size-xs);
 `

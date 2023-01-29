@@ -8,7 +8,7 @@ import {
 import { useOutletContext } from "react-router-dom"
 
 
-import { getUser } from './lib/getUser'
+import { getUser } from './lib/requests/getUser'
 
 import { Login } from './pages/Login';
 import { NoPage } from './pages/NoPage';

@@ -18,7 +18,7 @@ export const LoginForm = () => {
 
   return (
     <FormContainer>
-      <FormTitle>Login</FormTitle>
+      <FormTitle>Log In</FormTitle>
       <InputLabel>Username</InputLabel>
       <FormInput 
         type={"text"} 

@@ -23,12 +23,13 @@ nav{
 :root {
 
   --black: #242424;
-  --gray: #464646;
+  --gray: #313131;
+  --lightgray: #757575;
   --white: #eeeeee;
   --blue: #63a1fd;
   --green: #30e63f;
   --yellow: #f8fc2a;
-  --red: #db3535;
+  --red: #f07979;
 
   --font-primary: 'Open Sans', sans-serif;
   --font-secondary: 'Lora', serif;
@@ -51,6 +52,7 @@ nav{
   --z-navmenu: 700;
   --z-main: 500;
   --z-overlay: 600;
+  --z-mainloader: 650;
 
 
 }

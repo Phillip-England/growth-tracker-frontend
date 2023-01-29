@@ -1,4 +1,4 @@
-import { apiUrl } from './globals'
+import { apiUrl } from '../globals'
 
 export const getUser = async (useStateCall: React.Dispatch<React.SetStateAction<null>>) => {
   const url = apiUrl + '/user/get'

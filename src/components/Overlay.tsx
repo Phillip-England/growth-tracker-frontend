@@ -6,6 +6,6 @@ export const Overlay = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: var(--black);
-  opacity: 60%;
+  opacity: 70%;
   z-index: var(--z-overlay);
 `

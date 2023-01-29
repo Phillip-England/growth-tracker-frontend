@@ -18,7 +18,7 @@ const NavMenuContainer = styled.div`
 const NavMenuItem = styled.div`
   padding: var(--space-xs);
   font-size: var(--font-size-sm);
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   color: var(--white);
 `
 
@@ -38,9 +38,9 @@ export const NavMenu = ({
           onClick={() => setNav(false)}
           style={({isActive, isPending}) => {
             return {
-              color: isActive ? "var(--yellow)" : 'inherit'
+              borderBottom: isActive ? 'solid var(--lightgray) 1px' : 'inherit'
             }
-        }}>Login</NavLink>
+        }}>Log In</NavLink>
       </NavMenuItem>
       <NavMenuItem>
         <NavLink 
@@ -48,9 +48,9 @@ export const NavMenu = ({
           onClick={() => setNav(false)}
           style={({isActive, isPending}) => {
             return {
-              color: isActive ? 'var(--yellow)' : 'inherit'
+              borderBottom: isActive ? 'solid var(--lightgray) 1px' : 'inherit'
             }
-        }}>Signup</NavLink>
+        }}>Sign Up</NavLink>
       </NavMenuItem>
     </NavMenuContainer>
   )

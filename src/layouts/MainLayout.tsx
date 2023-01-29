@@ -16,6 +16,7 @@ export const MainLayout = ({ user }: any) => {
   const spacerPadding: string = navPadding
 
   const [nav, setNav] = useState(false)
+  const [overlay, setOverlay] = useState(false)
 
 
   return (
