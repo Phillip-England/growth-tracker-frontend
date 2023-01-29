@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 import { SignupForm } from "../components/forms/SignupForm"
-import { Overlay } from "../components/Overlay"
-import { MainLoader } from "../components/Loaders"
+import { Overlay } from "../components/misc/Overlay"
+import { MainLoader } from "../components/misc/Loaders"
 
 export const Signup = () => {
 

@@ -12,7 +12,7 @@ import {
   FormError,
   FormSuccess
 } from './FormComponents'
-import { Spacer } from '../Spacer'
+import { Spacer } from '../misc/Spacer'
 import { FormState } from '../../lib/types/FormState'
 
 
@@ -46,16 +46,19 @@ export const SignupForm = ({ setOverlay, setLoader }: any) => {
       <InputLabel>Username</InputLabel>
       <FormInput 
         type={"text"} 
+        value={username}
         onChange={(e) => {setUsername(e.target.value)}}  
       ></FormInput>
       <InputLabel>Email</InputLabel>
       <FormInput 
-        type={"text"} 
+        type={"text"}
+        value={email}
         onChange={(e) => {setEmail(e.target.value)}}  
       ></FormInput>
       <InputLabel>Password</InputLabel>
       <FormInput 
         type={"text"} 
+        value={password}
         onChange={(e) => {setPassword(e.target.value)}}
       ></FormInput>
       <Spacer height={'0px'} padding={"var(--space-xxs)"} />

@@ -1,37 +1,19 @@
 
 import styled from "styled-components"
 
-import { Spacer } from "./Spacer"
+import { 
+  NavMenuSpacer,
+  NavMenuContainer,
+  NavMenuItem
+} from "./NavComponents"
 import { NavLink } from "react-router-dom"
 
-
-const NavMenuContainer = styled.div`
-  height: 100vh;
-  background-color: var(--black);
-  width: 70%;
-  position: fixed;
-  z-index: var(--z-navmenu);
-  border-right:solid var(--gray) 2px;
-  top:0;
-`
-
-const NavMenuItem = styled.div`
-  padding: var(--space-xs);
-  font-size: var(--font-size-sm);
-  font-family: var(--font-primary);
-  color: var(--white);
-`
-
-export const NavMenu = ({ 
-  spacerHeight, 
-  spacerPadding,
+export const LoggedOutNavMenu = ({ 
   setNav
 }: any) => {
-
-
   return (
     <NavMenuContainer>
-      <Spacer height={spacerHeight} padding={spacerPadding}></Spacer>
+      <NavMenuSpacer></NavMenuSpacer>
       <NavMenuItem>
         <NavLink 
           to="/login" 
@@ -54,6 +36,24 @@ export const NavMenu = ({
       </NavMenuItem>
     </NavMenuContainer>
   )
+}
 
-
+export const LoggedInNavMenu = ({ 
+  setNav
+}: any) => {
+  return (
+    <NavMenuContainer>
+      <NavMenuSpacer></NavMenuSpacer>
+      <NavMenuItem>
+        <NavLink 
+          to="/app/logout" 
+          onClick={() => setNav(false)}
+          style={({isActive, isPending}) => {
+            return {
+              borderBottom: isActive ? 'solid var(--lightgray) 1px' : 'inherit'
+            }
+        }}>Log Out</NavLink>
+      </NavMenuItem>
+    </NavMenuContainer>
+  )
 }

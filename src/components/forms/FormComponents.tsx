@@ -55,6 +55,7 @@ export const FormSubmitButton = styled.button`
   border-radius: 10px;
   &:focus {
     border: solid var(--red) 1px;
+    color: var(--red);
   }
 `
 

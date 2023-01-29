@@ -19,11 +19,10 @@ export const registerUser = async (
   const data = await response.json()
   console.log(data.message)
   formState.setOverlay(false)
-  if (response.status !== 200) {
+  if (response.status == 400) {
     formState.setError(data.error)
   }
   if (response.status === (201)) {
-    window.location.replace(appUrl + '/home')
-  
+    window.location.href = appUrl + '/app'
   }
 }

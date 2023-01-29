@@ -1,35 +1,28 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
 import {
   Route,
   BrowserRouter,
   Routes
 } from "react-router-dom";
-import { useOutletContext } from "react-router-dom"
-
-
-import { getUser } from './lib/requests/getUser'
 
 import { Login } from './pages/Login';
 import { NoPage } from './pages/NoPage';
-import { MainLayout } from './layouts/MainLayout';
+import { LoggedOutLayout } from './layouts/LoggedOutLayout';
 import { Signup } from './pages/Signup'
-
-
+import { Home } from './pages/Home'
+import { LoggedInLayout } from './layouts/LoggedInLayout';
 
 function App() {
-
-
-  const [user, setUser] = useState(null);
-  useEffect(() => {getUser(setUser)}, [])
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout user={user} />}>
+        <Route path="/" element={<LoggedOutLayout />}>
           <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login user={user} />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NoPage/>} />
+        </Route>
+        <Route path="/app" element={<LoggedInLayout />}>
+          <Route index element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>
