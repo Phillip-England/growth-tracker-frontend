@@ -10,7 +10,6 @@ import {
   FormInput,
   FormSubmitButton,
   FormError,
-  FormSuccess
 } from './FormComponents'
 import { Spacer } from '../misc/Spacer'
 import { FormState } from '../../lib/types/FormState'
@@ -18,11 +17,10 @@ import { FormState } from '../../lib/types/FormState'
 
 export const SignupForm = ({ setOverlay, setLoader }: any) => {
   
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('Phillip')
+  const [email, setEmail] = useState('a@gmail.com')
+  const [password, setPassword] = useState('Password123!')
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
 
   return (
     

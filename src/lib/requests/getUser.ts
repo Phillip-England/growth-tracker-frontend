@@ -1,10 +1,16 @@
-import { apiUrl } from '../globals'
+import { apiUrl, appUrl } from '../globals'
 
-export const getUser = async (useStateCall: React.Dispatch<React.SetStateAction<null>>) => {
+export const getUser = async (setUser: React.Dispatch<React.SetStateAction<null>>) => {
   const url = apiUrl + '/user/get'
-  const response = await fetch(url)
-  const data = await response.json()
+  const response = await fetch(url, {
+    method: 'GET',
+    credentials: 'include'
+  })
   if (response.status == 200) {
-    useStateCall(data.message)
+    const data = await response.json()
+    const user = JSON.parse(data.message)
+    setUser(user)
+  } else {
+    window.location.href = appUrl + '/login'
   }
 } 

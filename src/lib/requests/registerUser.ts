@@ -11,13 +11,13 @@ export const registerUser = async (
   const url = apiUrl + '/user/create'
   const response = await fetch(url, {
     'method': 'POST',
+    'credentials': "include",
     'headers': {
       'Content-Type': 'application/json'
     },
     'body': JSON.stringify(user)
   })
   const data = await response.json()
-  console.log(data.message)
   formState.setOverlay(false)
   if (response.status == 400) {
     formState.setError(data.error)

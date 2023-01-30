@@ -52,7 +52,7 @@ export const LoggedInNavMenu = ({
             return {
               borderBottom: isActive ? 'solid var(--lightgray) 1px' : 'inherit'
             }
-        }}>Log Out</NavLink>
+        }}>Logout</NavLink>
       </NavMenuItem>
     </NavMenuContainer>
   )
