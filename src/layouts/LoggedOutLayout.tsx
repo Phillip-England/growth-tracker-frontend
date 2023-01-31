@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Nav } from '../components/navigation/NavComponents'
 import { LoggedOutNavMenu } from '../components/navigation/NavMenus'
 import { MainContent } from '../components/misc/MainContent'
-import { Overlay } from '../components/misc/Overlay'
+import { Overlay } from '../components/misc/Loaders'
 
 export const LoggedOutLayout = () => {
 

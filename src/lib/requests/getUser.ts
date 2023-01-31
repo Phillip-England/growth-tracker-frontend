@@ -1,6 +1,7 @@
 import { apiUrl, appUrl } from '../globals'
+import { User } from '../../types/User'
 
-export const getUser = async (setUser: React.Dispatch<React.SetStateAction<null>>) => {
+export const getUser = async (setUser: React.Dispatch<React.SetStateAction<null | User>>) => {
   const url = apiUrl + '/user/get'
   const response = await fetch(url, {
     method: 'GET',
@@ -8,7 +9,12 @@ export const getUser = async (setUser: React.Dispatch<React.SetStateAction<null>
   })
   if (response.status == 200) {
     const data = await response.json()
-    const user = JSON.parse(data.message)
+    const userData = JSON.parse(data.message)
+    const user: User = {
+      id: userData.id,
+      username: userData.username,
+      email: userData.email
+    }
     setUser(user)
   } else {
     window.location.href = appUrl + '/login'

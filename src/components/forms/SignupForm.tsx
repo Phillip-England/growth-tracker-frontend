@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 import { registerUser } from '../../lib/requests/registerUser'
-import { User } from '../../lib/types/User'
+import { User } from '../../types/User'
 
 import {
   FormContainer,
@@ -12,15 +12,17 @@ import {
   FormError,
 } from './FormComponents'
 import { Spacer } from '../misc/Spacer'
-import { FormState } from '../../lib/types/FormState'
+import { FormState } from '../../types/FormState'
+import { LoadingScreenContext } from '../misc/context'
 
 
-export const SignupForm = ({ setOverlay, setLoader }: any) => {
+export const SignupForm = () => {
   
-  const [username, setUsername] = useState('Phillip')
-  const [email, setEmail] = useState('a@gmail.com')
-  const [password, setPassword] = useState('Password123!')
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const setLoadingScreen = useContext(LoadingScreenContext)
 
   return (
     
@@ -33,7 +35,7 @@ export const SignupForm = ({ setOverlay, setLoader }: any) => {
       }
       const formState: FormState = {
         setError: setError,
-        setOverlay: setOverlay,
+        setLoadingScreen: setLoadingScreen,
       }
       registerUser(user, formState)
     }}>

@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { getUser } from "../lib/requests/getUser"
-
-
+import { User } from "../types/User"
+import { UserContext } from "../components/misc/context"
 
 
 export const Home = () => {
 
-  const [user, setUser] = useState(null)
-  useEffect(() => {
-    getUser(setUser)
-  }, [])
-
-  console.log(user)
+  const user = useContext(UserContext)
 
   return (
     <>
     {user ? (
-      <p>{user.id}</p>
+      <p>{user.email}</p>
     ) : (null)}
     </>
   )
