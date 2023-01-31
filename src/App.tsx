@@ -14,6 +14,8 @@ import { Home } from './pages/Home'
 import { LoggedInLayout } from './layouts/LoggedInLayout';
 import { LoadingScreenContext } from "./components/misc/context";
 import { LoadingScreen } from "./components/misc/Loaders";
+import { Logout } from "./pages/Logout";
+
 function App() {
 
   const [loadingScreen, setLoadingScreen] = useState(false)
@@ -30,6 +32,7 @@ function App() {
           </Route>
           <Route path="/app" element={<LoggedInLayout />}>
             <Route index element={<Home />} />
+            <Route path="/app/logout" element={<Logout />} />
           </Route>
         </Routes>
       </BrowserRouter>
