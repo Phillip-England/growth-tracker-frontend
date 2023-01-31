@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
-import { LoadingScreenContext } from "../components/misc/context"
-import { LoadingScreen } from "../components/misc/Loaders"
+import { LoadingScreenContext } from "../components/context/context"
+import { LoadingScreen } from "../components/loading/Loaders"
 import { logoutUser } from "../lib/requests/logoutUser"
 
 

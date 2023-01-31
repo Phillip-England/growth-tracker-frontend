@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { getUser } from "../lib/requests/getUser"
 import { User } from "../types/User"
-import { UserContext } from "../components/misc/context"
+import { UserContext } from "../components/context/context"
 
 
 export const Home = () => {

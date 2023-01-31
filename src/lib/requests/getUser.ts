@@ -1,7 +1,10 @@
 import { apiUrl, appUrl } from '../globals'
 import { User } from '../../types/User'
 
-export const getUser = async (setUser: React.Dispatch<React.SetStateAction<null | User>>) => {
+export const getUser = async (
+  setUser: React.Dispatch<React.SetStateAction<null | User>>,
+  protectedRoute: boolean
+) => {
   const url = apiUrl + '/user/get'
   const response = await fetch(url, {
     method: 'GET',
@@ -16,7 +19,15 @@ export const getUser = async (setUser: React.Dispatch<React.SetStateAction<null 
       email: userData.email
     }
     setUser(user)
-  } else {
+  } 
+
+
+  if (protectedRoute == true && response.status !== 200) {
     window.location.href = appUrl + '/login'
   }
+
+  if (protectedRoute == false && response.status === 200) {
+    window.location.href = appUrl + '/app'
+  }
+
 } 

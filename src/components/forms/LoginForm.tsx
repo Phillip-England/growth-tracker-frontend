@@ -9,7 +9,7 @@ import {
   FormError
 } from './FormComponents'
 import { Spacer } from '../misc/Spacer'
-import { LoadingScreenContext } from '../misc/context'
+import { LoadingScreenContext } from '../context/context'
 
 import { User } from '../../types/User'
 import { loginUser } from '../../lib/requests/loginUser'

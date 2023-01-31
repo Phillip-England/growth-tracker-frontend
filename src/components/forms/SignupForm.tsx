@@ -13,7 +13,7 @@ import {
 } from './FormComponents'
 import { Spacer } from '../misc/Spacer'
 import { FormState } from '../../types/FormState'
-import { LoadingScreenContext } from '../misc/context'
+import { LoadingScreenContext } from '../context/context'
 
 
 export const SignupForm = () => {

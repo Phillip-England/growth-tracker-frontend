@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import {
   Route,
   BrowserRouter,
@@ -12,13 +11,19 @@ import { LoggedOutLayout } from './layouts/LoggedOutLayout';
 import { Signup } from './pages/Signup'
 import { Home } from './pages/Home'
 import { LoggedInLayout } from './layouts/LoggedInLayout';
-import { LoadingScreenContext } from "./components/misc/context";
-import { LoadingScreen } from "./components/misc/Loaders";
+import { LoadingScreenContext } from "./components/context/context";
+import { LoadingScreen } from "./components/loading/Loaders";
 import { Logout } from "./pages/Logout";
+
+import { User } from "./types/User";
+import { getUser } from "./lib/requests/getUser";
+import { UserContext } from "./components/context/context";
+
 
 function App() {
 
   const [loadingScreen, setLoadingScreen] = useState(false)
+
 
   return (
     <LoadingScreenContext.Provider value={setLoadingScreen}>
