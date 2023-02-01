@@ -5,6 +5,7 @@ import { Nav } from '../components/navigation/NavComponents'
 import { LoggedInNavMenu } from '../components/navigation/NavMenus'
 import { MainContent } from '../components/misc/MainContent'
 import { Overlay } from '../components/loading/Loaders'
+import { Footer } from '../components/footer/Footer'
 
 import { User } from '../types/User'
 import { getUser } from '../lib/requests/getUser'
@@ -36,6 +37,7 @@ export const LoggedInLayout = () => {
           <MainContent>
             <Outlet />
           </MainContent>
+          <Footer />
       </UserContext.Provider>
     </>
   )

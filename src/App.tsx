@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Route,
   BrowserRouter,
@@ -14,11 +14,6 @@ import { LoggedInLayout } from './layouts/LoggedInLayout';
 import { LoadingScreenContext } from "./components/context/context";
 import { LoadingScreen } from "./components/loading/Loaders";
 import { Logout } from "./pages/Logout";
-
-import { User } from "./types/User";
-import { getUser } from "./lib/requests/getUser";
-import { UserContext } from "./components/context/context";
-
 
 function App() {
 
@@ -36,8 +31,10 @@ function App() {
             <Route path="*" element={<NoPage/>} />
           </Route>
           <Route path="/app" element={<LoggedInLayout />}>
-            <Route index element={<Home />} />
+            <Route path="/app/home" element={<Home />} />
             <Route path="/app/logout" element={<Logout />} />
+            <Route path="*" element={<NoPage/>} />
+
           </Route>
         </Routes>
       </BrowserRouter>

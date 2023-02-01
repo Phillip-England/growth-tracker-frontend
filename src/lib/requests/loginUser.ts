@@ -20,6 +20,6 @@ export const loginUser = async (user: User, formState: FormState) => {
     formState.setError(data.error)
   }
   if (response.status === 200) {
-    window.location.href = appUrl + '/app'
+    window.location.href = appUrl + '/app/home'
   }
 }

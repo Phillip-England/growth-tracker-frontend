@@ -18,7 +18,7 @@ const NavTitle = styled.h1`
   color: var(--white);
   font-family: var(--font-primary);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-md);
+  font-weight: var(--font-weight-sm);
 `
 
 const BarsIcon = styled(FontAwesomeIcon)`
@@ -41,7 +41,7 @@ export const NavMenuSpacer = styled.div`
 export const NavMenuItem = styled.div`
   padding: var(--space-xs);
   font-size: var(--font-size-sm);
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   color: var(--white);
 `
 

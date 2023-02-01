@@ -1,6 +1,4 @@
 
-import styled from "styled-components"
-
 import { 
   NavMenuSpacer,
   NavMenuContainer,
@@ -44,6 +42,26 @@ export const LoggedInNavMenu = ({
   return (
     <NavMenuContainer>
       <NavMenuSpacer></NavMenuSpacer>
+      <NavMenuItem>
+        <NavLink 
+          to="/app/home" 
+          onClick={() => setNav(false)}
+          style={({isActive, isPending}) => {
+            return {
+              borderBottom: isActive ? 'solid var(--lightgray) 1px' : 'inherit'
+            }
+        }}>Home</NavLink>
+      </NavMenuItem>
+      <NavMenuItem>
+        <NavLink 
+          to="/app/locations" 
+          onClick={() => setNav(false)}
+          style={({isActive, isPending}) => {
+            return {
+              borderBottom: isActive ? 'solid var(--lightgray) 1px' : 'inherit'
+            }
+        }}>Locations</NavLink>
+      </NavMenuItem>
       <NavMenuItem>
         <NavLink 
           to="/app/logout" 

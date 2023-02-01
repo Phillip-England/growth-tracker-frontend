@@ -30,7 +30,7 @@ export const FormInput = styled.input`
   padding: var(--space-xxs);
   outline: none;
   border: none;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   font-size: var(--font-size-xs);
   margin-bottom:var(--space-xs); 
   border: solid var(--gray) 1px;
@@ -49,7 +49,7 @@ export const FormSubmitButton = styled.button`
   padding: var(--space-xxxs) var(--space-xs);
   background-color: var(--black);
   color: var(--white);
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   align-self: flex-end;
   border: solid var(--gray) 1px;
   border-radius: 10px;
@@ -62,7 +62,7 @@ export const FormSubmitButton = styled.button`
 export const FormError = styled.p`
   margin-bottom: var(--space-sm);
   color: var(--red);
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   font-weight: var(--font-weight-md);
   background-color: var(--gray);
   font-size: var(--font-size-xs);
