@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Route,
   BrowserRouter,
@@ -12,13 +11,15 @@ import { Home } from './pages/Home/Home'
 import { Logout } from "./pages/Logout/Logout";
 import { Locations } from "./pages/Locations/Locations";
 
+import { LoggedOutLayout } from "./layouts/LoggedOutLayout";
+
 function App() {
 
 
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<></>}>
+          <Route path="/" element={<LoggedOutLayout />}>
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NoPage/>} />
