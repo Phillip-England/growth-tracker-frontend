@@ -1,6 +1,6 @@
-import { FormState } from "../../types/FormState"
-import { User } from "../../types/User"
-import { apiUrl, appUrl } from "../globals"
+import { FormState } from "../types/FormState"
+import { User } from "../types/User"
+import { apiUrl, appUrl } from "./globals"
 
 export const loginUser = async (user: User, formState: FormState) => {
   formState.setError('')

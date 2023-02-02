@@ -1,6 +1,6 @@
-import { apiUrl, appUrl } from "../globals"
-import { FormState } from "../../types/FormState"
-import { User } from "../../types/User"
+import { apiUrl, appUrl } from "./globals"
+import { FormState } from "../types/FormState"
+import { User } from "../types/User"
 
 export const registerUser = async (
   user: User, 

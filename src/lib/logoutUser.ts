@@ -1,4 +1,4 @@
-import { apiUrl, appUrl } from "../globals"
+import { apiUrl, appUrl } from "./globals"
 
 
 export const logoutUser = async (setLoadingScreen: React.Dispatch<React.SetStateAction<boolean>>) => {

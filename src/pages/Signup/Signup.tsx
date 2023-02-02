@@ -1,6 +1,6 @@
 
+export const Signup = () => {
 
-export const Locations = () => {
   return (
     <>
     </>

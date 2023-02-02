@@ -1,5 +1,5 @@
-import { apiUrl, appUrl } from '../globals'
-import { User } from '../../types/User'
+import { apiUrl, appUrl } from './globals'
+import { User } from '../types/User'
 
 export const getUser = async (
   setUser: React.Dispatch<React.SetStateAction<null | User>>,
