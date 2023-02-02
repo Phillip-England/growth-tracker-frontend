@@ -1,7 +1,10 @@
 
+import { Navbar } from "../components/Navbar/Navbar"
 
 export const LoggedOutLayout = () => {
   return (
-    <p>Yoooo</p>
+    <>
+      <Navbar title={'Talent Management Portal'} />
+    </>
   )
 }
