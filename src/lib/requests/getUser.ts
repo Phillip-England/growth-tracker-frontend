@@ -20,14 +20,11 @@ export const getUser = async (
     }
     setUser(user)
   } 
-
-
   if (protectedRoute == true && response.status !== 200) {
     window.location.href = appUrl + '/login'
   }
-
   if (protectedRoute == false && response.status === 200) {
-    window.location.href = appUrl + '/app'
+    window.location.href = appUrl + '/app/home'
   }
 
 } 

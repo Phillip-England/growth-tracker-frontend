@@ -12,4 +12,7 @@ export const LinkButton = styled.button`
   color: var(--red);
   width: fit-content;
   align-self: flex-end;
+  &:hover{
+    border:solid var(--red) 1px;
+  }
 `

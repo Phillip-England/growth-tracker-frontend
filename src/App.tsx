@@ -9,11 +9,12 @@ import { Login } from './pages/Login';
 import { NoPage } from './pages/NoPage';
 import { LoggedOutLayout } from './layouts/LoggedOutLayout';
 import { Signup } from './pages/Signup'
-import { Home } from './pages/Home'
+import { Home } from './pages/Home/Home'
 import { LoggedInLayout } from './layouts/LoggedInLayout';
 import { LoadingScreenContext } from "./components/context/context";
 import { LoadingScreen } from "./components/loading/Loaders";
 import { Logout } from "./pages/Logout";
+import { Locations } from "./pages/Locations/Locations";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/app" element={<LoggedInLayout />}>
             <Route path="/app/home" element={<Home />} />
             <Route path="/app/logout" element={<Logout />} />
+            <Route path='/app/locations' element={<Locations />} />
             <Route path="*" element={<NoPage/>} />
 
           </Route>
