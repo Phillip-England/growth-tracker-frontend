@@ -1,13 +1,23 @@
+import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 
-export const NavMenu = () => {
+interface NavMenuProps {
+  setNav: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const NavMenu = ({ setNav }: NavMenuProps) => {
   return (
-    <div className="fixed h-screen w-3/5 border-r border-gray-300 bg-white">
+    <div className="fixed z-20 h-screen w-3/5 bg-white">
       <div className="h-16"></div>
       <NavLink
         to="/login"
         style={({ isActive }) => {
-          return { backgroundColor: isActive ? "lightgray" : "inherit" }
+          return {
+            textDecoration: isActive ? "underline" : "inherit",
+          }
+        }}
+        onClick={() => {
+          setNav(false)
         }}
         className={"text-md flex p-4"}
       >
@@ -16,7 +26,10 @@ export const NavMenu = () => {
       <NavLink
         to="/signup"
         style={({ isActive }) => {
-          return { backgroundColor: isActive ? "lightgray" : "inherit" }
+          return { textDecoration: isActive ? "underline" : "inherit" }
+        }}
+        onClick={() => {
+          setNav(false)
         }}
         className={"text-md flex p-4"}
       >

@@ -1,25 +1,24 @@
-import { FormState } from "../types/FormState"
-import { User } from "../types/User"
 import { apiUrl, appUrl } from "./globals"
 
-export const loginUser = async (user: User, formState: FormState) => {
-  formState.setError('')
-  formState.setLoadingScreen(true)
-  const url = apiUrl + '/user/login'
+interface Body {
+  email: string
+  password: string
+}
+
+export const loginUser = async (email: string, password: string) => {
+  const url = apiUrl + "/user/login"
+  const body: Body = {
+    email: email,
+    password: password,
+  }
   const response = await fetch(url, {
-    'method': 'POST',
-    'credentials': 'include',
-    'headers': {
-      'Content-Type': 'application/json'
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
     },
-    'body': JSON.stringify(user)
+    body: JSON.stringify(body),
   })
   const data = await response.json()
-  formState.setLoadingScreen(false)
-  if (response.status === 400) {
-    formState.setError(data.error)
-  }
-  if (response.status === 200) {
-    window.location.href = appUrl + '/app/home'
-  }
+  return data
 }

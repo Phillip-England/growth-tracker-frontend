@@ -1,12 +1,9 @@
+import { LoginForm } from "../../components/Forms/LoginForm/LoginForm"
 
-
-
-export function Login({ user }: any) {
-
-
-  return ( 
+export const Login: React.FC = () => {
+  return (
     <>
+      <LoginForm />
     </>
   )
 }
-
