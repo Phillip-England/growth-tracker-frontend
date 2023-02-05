@@ -1,28 +1,30 @@
 import { apiUrl, appUrl } from "./globals"
-import { FormState } from "../types/FormState"
-import { User } from "../types/User"
+
+interface Body {
+  username: string
+  email: string
+  password: string
+}
 
 export const registerUser = async (
-  user: User, 
-  formState: FormState
+  username: string,
+  email: string,
+  password: string
 ) => {
-  formState.setError('')
-  formState.setLoadingScreen(true)
-  const url = apiUrl + '/user/create'
+  const url = apiUrl + "/user/create"
+  const body: Body = {
+    username: username,
+    email: email,
+    password: password,
+  }
   const response = await fetch(url, {
-    'method': 'POST',
-    'credentials': 'include',
-    'headers': {
-      'Content-Type': 'application/json'
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
     },
-    'body': JSON.stringify(user)
+    body: JSON.stringify(body),
   })
   const data = await response.json()
-  formState.setLoadingScreen(false)
-  if (response.status == 400) {
-    formState.setError(data.error)
-  }
-  if (response.status === (201)) {
-    window.location.href = appUrl + '/app'
-  }
+  return data
 }
