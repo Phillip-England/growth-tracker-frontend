@@ -1,4 +1,4 @@
-import { SignupForm } from "../../components/Forms/SignupForm"
+import { SignupForm } from "../../components/SignupForm"
 import { Navigate } from "react-router-dom"
 import { useState } from "react"
 

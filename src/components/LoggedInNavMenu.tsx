@@ -5,7 +5,7 @@ interface NavMenuProps {
   setNav: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const NavMenu = ({ setNav }: NavMenuProps) => {
+export const LoggedInNavMenu = ({ setNav }: NavMenuProps) => {
   return (
     <div className="fixed z-20 h-screen w-3/5 bg-white">
       <div className="h-16"></div>

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { loginUser } from "../../lib/loginUser"
+import { loginUser } from "../lib/loginUser"
 import {
   FormError,
   FormTitle,
@@ -16,8 +16,8 @@ interface LoginFormProps {
 export const LoginForm: React.FC<LoginFormProps> = ({
   setNavigate,
 }: LoginFormProps) => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("a@gmail.com")
+  const [password, setPassword] = useState("Mypassword123!")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 

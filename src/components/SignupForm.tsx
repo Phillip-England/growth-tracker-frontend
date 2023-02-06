@@ -8,7 +8,7 @@ import {
   FormLoader,
   FormSubmit,
 } from "./FormComponents"
-import { registerUser } from "../../lib/registerUser"
+import { registerUser } from "../lib/registerUser"
 
 interface SignUpFormProps {
   setNavigate: React.Dispatch<React.SetStateAction<boolean>>
