@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { Login } from "./pages/Login/Login"
 import { NoPage } from "./pages/NoPage/NoPage"
@@ -13,44 +13,28 @@ import { LoggedInLayout } from "./layouts/LoggedInLayout"
 import { ProtectedRoutes } from "./components/ProtectedRoutes"
 import { User } from "./types/User"
 import { getUser } from "./lib/getUser"
-
-const useAuth = async () => {
-  const response = await getUser()
-  const data = await response.json()
-  const message = await JSON.parse(data.message)
-  return message
-}
+import { UserContext } from "./context/UserContext"
+import { GuestRoutes } from "./components/GuestRoutes"
 
 function App() {
   const [user, setUser] = useState<User | null>(null)
 
-  useEffect(() => {
-    const message = useAuth().then((data) => {
-      if (data == "Unauthorized") {
-        setUser(null)
-      } else {
-        const user: User = {
-          id: data.id,
-          username: data.username,
-          email: data.email,
-        }
-        setUser(user)
-      }
-    })
-  }, [])
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoggedOutLayout />}>
-          <Route index element={<Navigate to={"/login"} />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-        {user ? (
+    <UserContext.Provider value={user}>
+      <BrowserRouter>
+        {/* Routes accesible by all guests */}
+        <Routes>
+          <Route path="/" element={<LoggedOutLayout />}>
+            <Route element={<GuestRoutes setUser={setUser} user={user} />}>
+              <Route index element={<Navigate to={"/login"} />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Route>
+          {/* Protected routes accesible by all authenticated users */}
           <Route path="/app" element={<LoggedInLayout />}>
-            <Route element={<ProtectedRoutes user={user} />}>
+            <Route element={<ProtectedRoutes setUser={setUser} user={user} />}>
               <Route index element={<Navigate to={"/app/home"} />} />
               <Route path="/app/home" element={<Home />} />
               <Route path="/app/logout" element={<Logout />} />
@@ -58,9 +42,9 @@ function App() {
               <Route path="*" element={<NoPage />} />
             </Route>
           </Route>
-        ) : null}
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
   )
 }
 
