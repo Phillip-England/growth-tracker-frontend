@@ -36,11 +36,7 @@ export const ProtectedRoutes: React.FC<ProtectedRoutesProps> = ({
       // forces app to wait until userData is fetched
       authUser().then((userData) => {
         setUser(userData)
-        // loading any additional data for each page, after user is loaded
-        switch (window.location.pathname) {
-          case "/app/home":
-            setLoading(false)
-        }
+        setLoading(false)
       })
     }
     loadData()

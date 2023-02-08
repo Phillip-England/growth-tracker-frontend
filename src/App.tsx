@@ -8,8 +8,7 @@ import { Home } from "./pages/Home/Home"
 import { Logout } from "./pages/Logout/Logout"
 import { Locations } from "./pages/Locations/Locations"
 
-import { LoggedOutLayout } from "./layouts/LoggedOutLayout"
-import { LoggedInLayout } from "./layouts/LoggedInLayout"
+import { MainLayout } from "./layouts/MainLayout"
 import { ProtectedRoutes } from "./components/ProtectedRoutes"
 import { User } from "./types/User"
 import { getUser } from "./lib/getUser"
@@ -24,7 +23,7 @@ function App() {
       <BrowserRouter>
         {/* Routes accesible by all guests */}
         <Routes>
-          <Route path="/" element={<LoggedOutLayout />}>
+          <Route path="/" element={<MainLayout />}>
             <Route element={<GuestRoutes setUser={setUser} user={user} />}>
               <Route index element={<Navigate to={"/login"} />} />
               <Route path="/signup" element={<Signup />} />
@@ -33,7 +32,7 @@ function App() {
             </Route>
           </Route>
           {/* Protected routes accesible by all authenticated users */}
-          <Route path="/app" element={<LoggedInLayout />}>
+          <Route path="/app" element={<MainLayout />}>
             <Route element={<ProtectedRoutes setUser={setUser} user={user} />}>
               <Route index element={<Navigate to={"/app/home"} />} />
               <Route path="/app/home" element={<Home />} />
